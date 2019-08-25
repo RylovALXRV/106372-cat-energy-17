@@ -1,0 +1,329 @@
+.nutrition-example {
+  padding: 18px 0 36px;
+
+  background-color: #f2f2f2;
+}
+
+.nutrition-example__wrapper-info {
+  padding: 0 20px;
+}
+
+.nutrition-example__header {
+  margin: 0 0 22px;
+
+  color: #111111;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+.nutrition-example__description {
+  margin: 0 0 25px;
+  padding-right: 5px;
+
+  font-family: "Arial", "Verdana", sans-serif;
+}
+
+.nutrition-example__list {
+  display: flex;
+  justify-content: center;
+  column-count: 2;
+
+  margin: 0 0 34px;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.nutrition-example__item {
+  position: relative;
+
+  border: 1px solid #cdcdcd;
+  box-sizing: border-box;
+  margin-right: 32px;
+  width: 124px;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.nutrition-example__item dl,
+.nutrition-example__definition {
+  margin: 0;
+}
+
+.nutrition-example__item dl {
+  display: flex;
+  justify-content: center;
+}
+
+.nutrition-example__term {
+  padding: 13px 0 17px;
+
+  color: #111111;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.nutrition-example__definition {
+  position: absolute;
+  left: 18px;
+  top: 100%;
+  text-align: center;
+
+  box-sizing: border-box;
+  margin-top: -8px;
+  padding: 0 10px;
+  width: 87px;
+
+  background-color: #f2f2f2;
+  font-family: "Arial", "Verdana", sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.nutrition-example__price-block {
+  text-align: center;
+
+  margin: 0 0 33px;
+
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.nutrition-example__image-block {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  margin-bottom: 30px;
+}
+
+.nutrition-example__image-wrapper:last-of-type {
+  position: absolute;
+  z-index: -1;
+}
+
+.nutrition-example__range {
+  display: flex;
+  justify-content: center;
+
+  padding: 0 20px;
+}
+
+.nutrition-example__btn {
+  border: 0;
+  padding: 0;
+
+  background-color: transparent;
+  color: #111111;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.nutrition-example__scale {
+  position: relative;
+
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  height: 14px;
+  margin: 2px 19px 0;
+  width: 84px;
+
+  background-color: @color-white;
+}
+
+.nutrition-example__control {
+  position: absolute;
+  right: 50%;
+  top: 4px;
+
+  border: 0;
+  border-radius: 5px;
+  height: 6px;
+  width: 35px;
+
+  background-color: #68b738;
+}
+
+@media (min-width: @tablet-width) {
+  .nutrition-example {
+    padding-bottom: 67px;
+
+    background-color: @color-white;
+  }
+
+  .nutrition-example__wrapper-info {
+    padding: 0 30px;
+  }
+
+  .nutrition-example__header {
+    margin-bottom: 65px;
+
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .nutrition-example__description {
+    margin-bottom: 52px;
+    padding-right: 20px;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .nutrition-example__inner {
+    display: flex;
+  }
+
+  .nutrition-example__list {
+    justify-content: flex-start;
+  }
+
+  .nutrition-example__item {
+    margin-right: 42px;
+    width: 162px;
+  }
+
+  .nutrition-example__term {
+    padding: 15px 0 18px;
+
+    font-size: 30px;
+    line-height: 37px;
+  }
+
+  .nutrition-example__definition {
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 0 8px;
+    width: 143px;
+
+    background-color: @color-white;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .nutrition-example__price-block {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    margin: 12px 0 0 auto;
+    width: 192px;
+
+    font-size: 20px;
+  }
+
+  .nutrition-example__price {
+    margin-top: 8px;
+  }
+
+  .nutrition-example__image-wrapper {
+    &:last-of-type {
+      position: relative;
+      z-index: 0;
+    }
+  }
+
+  .nutrition-example__img--after {
+    height: 517px;
+    width: 545px;
+  }
+
+  .nutrition-example__img--before {
+    height: 620px;
+    width: 677px;
+  }
+
+  .nutrition-example__btn {
+    border-bottom: 1px dotted #c8c8c8;
+    padding-bottom: 4px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .nutrition-example__scale {
+    border: 0;
+    height: 6px;
+    margin-top: 7px;
+    width: 428px;
+
+    background-color: #dcdcdc;
+  }
+
+  .nutrition-example__control {
+    top: -13px;
+
+    border: 1px solid #cdcdcd;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+
+    background-color: @color-white;
+    box-shadow: 0 2px 5px fade(@color-black, 15%);
+    transform: translateX(50%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 11px;
+
+      border-radius: 50%;
+      height: 8px;
+      width: 8px;
+
+      background-color: #68b738;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .nutrition-example {
+    display: flex;
+    padding: 0 110px;
+    width: 1220px;
+  }
+
+  .nutrition-example__wrapper-info {
+    padding: 0;
+    width: 50%;
+  }
+
+  .nutrition-example__header {
+    margin-bottom: 145px;
+  }
+
+  .nutrition-example__description {
+    margin-bottom: 68px;
+    padding-right: 172px;
+  }
+
+  .nutrition-example__inner {
+    flex-direction: column;
+  }
+
+  .nutrition-example__list {
+    margin-bottom: 40px;
+  }
+
+  .nutrition-example__price-block {
+    flex-direction: row;
+
+    margin-left: 0;
+    width: auto;
+  }
+
+  .nutrition-example__price {
+    margin-left: 64px;
+  }
+
+  .nutrition-example__wrapper-example {
+    width: 50%;
+  }
+}

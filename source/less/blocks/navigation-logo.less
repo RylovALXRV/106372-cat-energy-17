@@ -1,0 +1,38 @@
+.navigation-logo {
+  display: block;
+
+  height: 38px;
+  padding: 11px 0 16px;
+  width: 191px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.navigation-logo__img {
+  height: auto;
+  width: 100%;
+}
+
+@media (min-width: @tablet-width) {
+  .navigation-logo {
+    height: 58px;
+    padding-bottom: 0;
+    padding-top: 24px;
+    width: 173px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .navigation-logo {
+    height: 59px;
+    padding-top: 53px;
+    width: 202px;
+  }
+}

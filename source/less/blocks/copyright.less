@@ -1,0 +1,44 @@
+.copyright {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 22px 0 28px;
+  width: 100%;
+
+  cursor: pointer;
+
+  font-family: "Arial", "Verdana", sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+
+  &:hover .copyright__svg,
+  &:focus .copyright__svg,
+  &:active .copyright__svg {
+    fill: @color-light-green;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__logo-text {
+  margin: 9px 0 0;
+}
+
+.copyright__svg {
+  fill: #666666;
+}
+
+@media (min-width: @tablet-width) {
+  .copyright {
+    margin-left: auto;
+    padding: 0;
+    width: auto;
+  }
+
+  .copyright__logo-text {
+    margin-right: 23px;
+  }
+}

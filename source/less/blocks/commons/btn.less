@@ -1,0 +1,26 @@
+.btn {
+  display: block;
+  text-align: center;
+
+  border: 0;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 11px 20px 9px 20px;
+  width: 100%;
+
+  background-color: @bg-color-btn;
+  color: @color-white;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: #5eaa2f;
+  }
+
+  &:active {
+    color: fade(@color-white, 30%);
+  }
+}
