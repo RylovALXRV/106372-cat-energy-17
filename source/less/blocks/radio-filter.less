@@ -1,0 +1,121 @@
+.radio-filter__item {
+  margin-bottom: 15px;
+  padding: 5px 0 5px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.radio-filter__label {
+  position: relative;
+
+  padding: 0 0 0 45px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    left: 0;
+    top: -3px;
+
+    border: 1px solid #cdcdcd;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+  }
+
+  &:hover::before,
+  &:active::before {
+    border-color: #bababa;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.radio-filter__input {
+  &:active ~ .radio-filter__label::after,
+  &:checked ~ .radio-filter__label::after,
+  &:checked:active ~ .radio-filter__label::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 6px;
+
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 12px;
+    width: 12px;
+
+    background-color: @color-light-green;
+  }
+
+  &:focus ~ .radio-filter__label::before {
+    outline: 2px dashed @color-light-green;
+  }
+
+  &:disabled ~ .radio-filter__label {
+    pointer-events: auto;
+
+    opacity: 0.7;
+  }
+
+  &:disabled ~ .radio-filter__label::before,
+  &:disabled ~ .radio-filter__label::after {
+    border-color: #cdcdcd;
+    opacity: 0.7;
+  }
+
+  &:disabled:active ~ .radio-filter__label::after {
+    background-color: transparent;
+  }
+
+  &:disabled:checked ~ .radio-filter__label::after {
+    background-color: @color-light-green;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .radio-filter {
+    border: 1px solid #e6e6e6;
+    padding: 25px 25px 23px;
+  }
+
+  .radio-filter__item {
+    margin-bottom: 13px;
+    padding: 9px 0 13px 0;
+  }
+
+  .radio-filter__label {
+    padding-left: 60px;
+
+    &::before {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .radio-filter__input {
+    &:active ~ .radio-filter__label::after,
+    &:checked ~ .radio-filter__label::after,
+    &:checked:active ~ .radio-filter__label::after {
+      left: 11px;
+      top: 8px;
+
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .radio-filter {
+    width: 518px;
+  }
+}
