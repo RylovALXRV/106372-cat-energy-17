@@ -142,8 +142,8 @@
 
     margin: 0 auto 81px;
     min-height: auto;
-    padding: 110px 110px 187px;
-    width: 1440px;
+    padding: 110px 40px 187px;
+    width: 1220px;
 
     &::before {
       content: "";
@@ -153,9 +153,15 @@
       z-index: -1;
 
       height: 696px;
-      width: 720px;
+      width: 50%;
 
       background: #64a83b url("../img/index-background-desktop@1x.jpg") no-repeat;
+      background-position-x: right;
+      background-size: 721px;
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url("../img/index-background-desktop@2x.jpg");
+      }
     }
 
     &::after {
@@ -172,19 +178,16 @@
   }
 
   .nutrition__wrapper {
+    box-sizing: border-box;
+    padding-left: 40px;
     width: 50%;
   }
 
-  .nutrition__header {
-    padding: 0 0 0 80px;
-  }
-
   .nutrition__note {
-    margin-bottom: 52px;
-    padding-left: 80px;
+    margin-bottom: 53px;
   }
 
   .nutrition__btn {
-    margin-left: 80px;
+    margin-left: 0;
   }
 }

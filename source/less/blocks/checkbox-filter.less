@@ -136,16 +136,21 @@
     justify-content: flex-start;
 
     margin: 0 auto;
-    padding: 0 30px 0 110px;
-    width: 1300px;
+    padding: 0 40px;
+    width: 1220px;
   }
 
   .checkbox-filter__item {
-    width: 325px;
+    margin-right: 80px;
+    width: 245px;
 
     &:nth-child(odd),
     &:nth-child(even) {
-      width: 325px;
+      width: 245px;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
     }
   }
 }
