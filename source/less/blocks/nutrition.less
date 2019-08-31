@@ -25,6 +25,11 @@
 
     background: #64a83b url("../img/index-background-mobile@1x.jpg") no-repeat;
     background-position-x: center;
+    background-size: 320px;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/index-background-mobile@2x.jpg");
+    }
   }
 
   &::after {
@@ -52,6 +57,7 @@
   display: flex;
   flex-direction: column;
 
+  min-height: 453px;
   width: 100%;
 }
 
@@ -60,15 +66,13 @@
 
   margin: 0 0 25px;
 
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 36px;
+  .font-header(36px; 36px; @color-white);
 }
 
 .nutrition__note {
   text-align: center;
 
-  margin: 0;
+  margin: 0 0 10px;
 
   line-height: 14px;
   text-transform: uppercase;
@@ -111,17 +115,20 @@
     margin-bottom: 41px;
     padding-right: 80px;
 
-    font-size: 60px;
-    line-height: 60px;
+    .font-header(60px; 60px);
   }
 
   .nutrition__note {
     text-align: left;
 
-    margin-bottom: 48px;
+    margin-bottom: 15px;
 
     font-size: 20px;
     line-height: 20px;
+
+    &:last-of-type {
+      margin-bottom: 48px;
+    }
   }
 
   .nutrition__btn {
@@ -166,7 +173,7 @@
 
     &::after {
       top: 142px;
-      transform: translateX(115px);
+      transform: translateX(194px);
 
       background-image: url("../img/index-can-desktop@1x.png");
 
@@ -184,7 +191,9 @@
   }
 
   .nutrition__note {
-    margin-bottom: 53px;
+    &:last-of-type {
+      margin-bottom: 53px;
+    }
   }
 
   .nutrition__btn {

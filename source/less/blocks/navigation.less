@@ -14,6 +14,10 @@
   padding: 0;
 
   background-color: #ffffff;
+
+  &:focus {
+    outline: 2px dashed @color-light-green;
+  }
 }
 
 .navigation--closed .navigation__btn {
@@ -37,7 +41,7 @@
   margin-right: 3px;
   width: 18px;
 
-  background-image: url("../../img/icon-close.svg");
+  background-image: url("../img/icon-close.svg");
 }
 
 @media (min-width: @tablet-width) {

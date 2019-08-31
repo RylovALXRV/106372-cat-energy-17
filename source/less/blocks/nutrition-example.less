@@ -1,7 +1,14 @@
 .nutrition-example {
-  padding: 18px 0 36px;
+  padding: 18px 0 35px;
 
   background-color: #f2f2f2;
+}
+
+.nutrition-example a,
+.nutrition-example button {
+  &:focus {
+    outline: 2px dashed @color-light-green;
+  }
 }
 
 .nutrition-example__wrapper-info {
@@ -11,39 +18,47 @@
 .nutrition-example__header {
   margin: 0 0 22px;
 
-  color: #111111;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 60px;
+  .font-header(36px; 60px);
 }
 
 .nutrition-example__description {
-  margin: 0 0 25px;
+  margin: 0 0 10px;
   padding-right: 5px;
 
   font-family: @font-arial;
+
+  &:last-of-type {
+    margin-bottom: 25px;
+  }
+}
+
+.nutrition-example__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nutrition-example__list {
   display: flex;
-  justify-content: center;
-  column-count: 2;
+  flex-wrap: wrap;
 
-  margin: 0 0 34px;
+  margin: 0 0 11px;
+  max-width: 403px;
   padding: 0;
 
   list-style-type: none;
 }
 
 .nutrition-example__item {
+  flex-grow: 1;
   position: relative;
 
-  border: 1px solid #cdcdcd;
   box-sizing: border-box;
-  margin-right: 32px;
+  margin-right: auto;
   width: 124px;
 
-  &:nth-child(2n) {
+  &:nth-child(even) {
+    margin-left: 32px;
     margin-right: 0;
   }
 }
@@ -55,10 +70,14 @@
 
 .nutrition-example__item dl {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .nutrition-example__term {
+  text-align: center;
+
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
   padding: 13px 0 17px;
 
   color: #111111;
@@ -68,25 +87,23 @@
 }
 
 .nutrition-example__definition {
-  position: absolute;
-  left: 18px;
-  top: 100%;
+  position: relative;
+  top: -9px;
   text-align: center;
 
   box-sizing: border-box;
-  margin-top: -8px;
-  padding: 0 10px;
-  width: 87px;
+  padding: 0 5px;
 
-  background-color: #f2f2f2;
   font-family: @font-arial;
   font-size: 12px;
   line-height: 12px;
+
+  background-color: #f2f2f2;
+  margin-left: 18px;
+  margin-right: 19px;
 }
 
 .nutrition-example__price-block {
-  text-align: center;
-
   margin: 0 0 33px;
 
   line-height: 20px;
@@ -98,7 +115,7 @@
   justify-content: center;
   position: relative;
 
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 }
 
 .nutrition-example__image-wrapper {
@@ -115,7 +132,7 @@
   display: flex;
   justify-content: center;
 
-  padding: 0 20px;
+  padding: 0 15px 0 20px;
 }
 
 .nutrition-example__btn {
@@ -134,9 +151,9 @@
 
   border: 1px solid #cdcdcd;
   border-radius: 10px;
-  height: 14px;
-  margin: 2px 19px 0;
-  width: 84px;
+  height: 12px;
+  margin: 2px 18px 0;
+  width: 82px;
 
   background-color: @color-white;
 }
@@ -163,36 +180,46 @@
   }
 
   .nutrition-example__wrapper-info {
-    margin-bottom: 52px;
+    margin-bottom: 61px;
     padding: 0 30px;
   }
 
   .nutrition-example__header {
     margin-bottom: 65px;
 
-    font-size: 60px;
-    line-height: 60px;
+    .font-header(60px; 60px);
   }
 
   .nutrition-example__description {
-    margin-bottom: 52px;
+    margin-bottom: 10px;
     padding-right: 20px;
 
     font-size: 16px;
     line-height: 24px;
+
+    &:last-of-type {
+      margin-bottom: 52px;
+    }
   }
 
   .nutrition-example__inner {
-    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
   }
 
   .nutrition-example__list {
     justify-content: flex-start;
+
+    margin-right: 150px;
+    max-width: 67%;
   }
 
   .nutrition-example__item {
-    margin-right: 42px;
     width: 162px;
+
+    &:nth-child(even) {
+      margin-left: 42px;
+    }
   }
 
   .nutrition-example__term {
@@ -203,21 +230,22 @@
   }
 
   .nutrition-example__definition {
-    left: 50%;
-    transform: translateX(-50%);
-
-    padding: 0 8px;
-    width: 143px;
-
     background-color: @color-white;
     font-size: 14px;
     line-height: 14px;
+
+    margin: 0 24px;
+
+    &--days {
+      margin: 0 10px;
+    }
   }
 
   .nutrition-example__price-block {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    flex-shrink: 0;
 
     margin: 12px 0 0 auto;
     width: 192px;
@@ -267,11 +295,20 @@
   }
 
   .nutrition-example__btn {
-    border-bottom: 1px dotted #c8c8c8;
+    border-bottom: 1px dotted fade(#111111, 23%);
     padding-bottom: 4px;
 
     font-size: 20px;
     line-height: 20px;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid fade(#111111, 40%);
+    }
+
+    &:active {
+      border-bottom-color: transparent;
+    }
   }
 
   .nutrition-example__scale {
@@ -306,6 +343,39 @@
       width: 8px;
 
       background-color: #68b738;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 3px 5px fade(@color-black, 25%);
+    }
+
+    &:active {
+      top: -14px;
+
+      border: 2px solid @color-light-green;
+      height: 34px;
+      width: 34px;
+
+      box-shadow: 0 4px 5px fade(@color-black, 30%);
+
+      &::before {
+        left: 11px;
+        top: 11px;
+      }
+    }
+  }
+}
+
+@media (min-width: 930px) {
+  .nutrition-example__item {
+    flex-grow: 0;
+
+    margin-right: 42px;
+
+    &:nth-child(even) {
+      margin-left: 0;
+      margin-right: 42px;
     }
   }
 }
@@ -345,8 +415,12 @@
   }
 
   .nutrition-example__description {
-    margin-bottom: 68px;
+    margin-bottom: 10px;
     padding-right: 175px;
+
+    &:last-of-type {
+      margin-bottom: 68px;
+    }
   }
 
   .nutrition-example__inner {
@@ -354,13 +428,19 @@
   }
 
   .nutrition-example__list {
-    margin-bottom: 40px;
+    margin-bottom: 39px;
+    margin-right: 0;
+  }
+
+  .nutrition-example__definition {
+    background-color: #f2f2f2;
   }
 
   .nutrition-example__price-block {
     flex-direction: row;
 
     margin-left: 0;
+    margin-top: 0;
     width: auto;
   }
 

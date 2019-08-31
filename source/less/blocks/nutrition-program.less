@@ -15,10 +15,7 @@
   margin: 0 0 19px;
   padding: 8px 0 10px 71px;
 
-  color: #111111;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 37px;
+  .font-header(24px; 37px);
   text-transform: uppercase;
 
   &::before {
@@ -179,8 +176,7 @@
     margin-bottom: 25px;
     padding: 0;
 
-    font-size: 36px;
-    line-height: 37px;
+    .font-header(36px; 37px);
 
     &::after {
       background: none;
@@ -213,6 +209,10 @@
     &::after {
       top: 10px;
     }
+
+    &:focus {
+      outline: 2px dashed @color-light-green;
+    }
   }
 }
 
@@ -226,6 +226,10 @@
 
     &:nth-child(2n) {
       margin-right: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 30px;
     }
   }
 
@@ -281,6 +285,7 @@
   }
 
   .nutrition-program .nutrition-program__description {
+    max-width: 465px;
     width: auto;
 
     &:last-of-type {

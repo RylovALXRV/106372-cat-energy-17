@@ -1,3 +1,9 @@
+.catalog-card a {
+  &:focus {
+    outline: 2px dashed @color-light-green;
+  }
+}
+
 .catalog-card__wrapper {
   display: flex;
 }
@@ -15,9 +21,7 @@
 .catalog-card__header {
   margin: 21px 0 13px;
 
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
+  .font-header(16px; 20px);
   text-transform: uppercase;
 }
 
@@ -32,6 +36,7 @@
 
 .catalog-card__features {
   border-collapse: collapse;
+  margin-bottom: 22px;
   width: 100%;
 
   font-family: @font-arial;
@@ -46,6 +51,8 @@
 
 .catalog-card__row th,
 .catalog-card td {
+  display: block;
+
   padding: 0;
 
   font-weight: 400;
@@ -87,7 +94,7 @@
   }
 
   .catalog-card__header-link {
-    padding: 0 40px;
+    padding: 0 50px;
   }
 
   .catalog-card__features {
