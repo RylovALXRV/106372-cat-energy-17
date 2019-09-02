@@ -173,7 +173,6 @@
 
 @media (min-width: @tablet-width) {
   .nutrition-example {
-    margin-bottom: 68px;
     padding-bottom: 0;
 
     background-color: @color-white;
@@ -255,6 +254,12 @@
 
   .nutrition-example__price {
     margin-top: 8px;
+  }
+
+  .nutrition-example__wrapper-example {
+    padding-bottom: 68px;
+
+    background-image: linear-gradient(to bottom, transparent 169px, #f2f2f2 169px);
   }
 
   .nutrition-example__image-block {
@@ -403,7 +408,10 @@
   }
 
   .nutrition-example__wrapper-example {
+    padding-bottom: 0;
     width: 50%;
+
+    background-image: none;
   }
 
   .nutrition-example__image-block {

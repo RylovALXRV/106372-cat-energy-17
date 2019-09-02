@@ -70,20 +70,26 @@
   height: 45px;
   width: 100%;
 
+  color: @main-color;
+  text-transform: uppercase;
+
   &::placeholder {
     color: @main-color;
     font: inherit;
     font-size: 16px;
-    text-transform: uppercase;
   }
 
   &:hover {
     border-color: fade(#cdcdcd, 100%);
   }
 
+  &:focus,
+  &:focus:invalid {
+    border-color: transparent;
+  }
+
   &:focus {
-    border: 2px solid @main-color;
-    outline: none;
+    outline: 2px solid @main-color;
   }
 
   &:focus ~ .selection-form__svg {
@@ -91,7 +97,7 @@
   }
 
   &:focus:invalid {
-    border: 2px solid #ff8282;
+    outline: 2px solid #ff8282;
   }
 
   &:focus:invalid ~ .selection-form__svg {
@@ -357,6 +363,20 @@
 
   .selection-form__item {
     padding: 0;
+  }
+
+  .selection-form__label {
+    &--tel {
+      margin-right: 19px;
+    }
+  }
+
+  .selection-form__label sup {
+    left: 1px;
+  }
+
+  .selection-form__svg {
+    right: 18px;
   }
 
   .selection-form__footer {
